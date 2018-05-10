@@ -1,0 +1,101 @@
+=======================
+Selector Cheat Sheet
+=======================
+
+1. Find element By id
+=== Find element by Id using css ===
+$("#id_of_element")
+
+=== Find element by Id using xpath ===
+$x("//div[@id='id_of_element']")
+
+=== Find div with Id error using css ===
+$(“div#error”)
+
+2. Find element by class
+=== Find element by class abc using css ===
+$(".abc")
+
+=== Find element by class abc using xpath ===
+$x("//div[@class='abc']")
+
+=== Find div with class abc using css ===
+$("div.abc")
+
+3. Find Element by attribute
+$("input[type='submit']")
+$("input[name='username']")
+
+4. Find nth-child: 
+=== Find 4th child li under ul ===
+$("ul li:nth-child(4)")
+
+=== Find 4th child any type under ul===
+$("ul *:nth-child(4))")
+
+=== Find first child li under ul ===
+$("ul li:first-child")
+
+=== Find last child li under ul ===
+$("ul li:last-child")
+
+=== find 5th cell in a table in a first row ===
+$("div.c2-month:first-child table tbody tr:nth-child(1) td:nth-child(5)>span:first-child")
+
+5. Find Sibling
+=== find adjacent input sibling(immediately following and having same parent) using css===
+$("#id + input")  
+
+=== find adjacent input sibling(immediately following and having same parent) using xpath===
+$x("//input[@id='username']/following-sibling::input[1]")
+
+=== general successor not necessarily immediately after using css===
+$("#id ~ input")   
+
+=== finding preceing sibling using xpath ===
+$x("//input[@id='username']/preceding-sibling::input[1]")
+
+6. Substring match
+=== prefix match using css ===
+$("div[id^='id_prefix']")
+
+=== prefix match using xpath in selenium only===
+$x("//div[starts-with(@id,'id_prefix')]")  
+
+=== suffix match using css===
+$("div[id^='id_suffix']")
+
+=== suffix match using xpath in selenium only===
+$x("//div[ends-with(@id,'id_prefix')]") 
+
+=== match a substring using css===
+$("div[id*='id_substring']")
+
+===match a substring using xpath in selenium only===
+$x("//div[contains(@id,'id_substring')]") 
+
+=== matching innertext ===
+$("a:contains('profile')")
+
+7. Chain Filter
+=== Find input with name login and type submit using css===
+$("input[name='login'][type='submit']")
+
+=== Find input with name login and type submit using xpath===
+$x("//input[@class='abc' and @name='xyz']")
+
+8. Descendants
+=== finding direct child span of div using css===
+$("div>span")  
+
+=== finding direct child span of div using xpath===
+$x("//div/span")
+
+=== finding span (child or sub child) of div using css===
+$("div span") 
+
+=== finding span (child or sub child) of div using xpath===
+$x("//div//span")  descendants
+
+
+
